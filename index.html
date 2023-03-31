@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zity-Builder</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="./images/computer.png" />
+
+    <link rel="stylesheet" href="./dist/semantic/semantic.min.css">
+
+    <link rel="stylesheet" href="./dist/codemirror-5.47.0/lib/codemirror.css">
+    <link rel="stylesheet" href="./dist/codemirror-5.47.0/theme/monokai.css">
+    <link rel="stylesheet" href="./dist/codemirror-5.47.0/addon/fold/foldgutter.css">
+    <link rel="stylesheet" href="./dist/codemirror-5.47.0/addon/lint/lint.css">
+
+    <script src="./dist/lodash.min.js"></script>
+    <script src="./dist/jquery-3.4.1.min.js"></script>
+    <script src="./dist/semantic/semantic.min.js"></script>
+
+    <link rel="stylesheet" href="./dist/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="./dist/dv-charts/dv-charts.css">
+
+    <script src="./dist/codemirror-5.47.0/lib/codemirror.js"></script>
+    <script src="./dist/codemirror-5.47.0/mode/javascript/javascript.js"></script>
+    <script src="./dist/codemirror-5.47.0/mode/css/css.js"></script>
+    <script src="./dist/codemirror-5.47.0/mode/xml/xml.js"></script>
+    <script src="./dist/codemirror-5.47.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/fold/brace-fold.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/fold/foldgutter.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/fold/foldcode.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/edit/matchbrackets.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/edit/closebrackets.js"></script>
+
+    <script src="./dist/lint/jshint.js"></script>
+    <script src="./dist/lint/jsonlint.js"></script>
+    <script src="./dist/lint/csslint.js"></script>
+
+    <script src="./dist/codemirror-5.47.0/addon/lint/lint.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/lint/javascript-lint.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/lint/json-lint.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/lint/css-lint.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/lint/htmlmixed-lint.js"></script>
+
+    <link rel="stylesheet" href="./dist/codemirror-5.47.0/addon/dialog/dialog.css">
+
+    <script src="./dist/codemirror-5.47.0/addon/search/search.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/search/searchcursor.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/search/jump-to-line.js"></script>
+    <script src="./dist/codemirror-5.47.0/addon/dialog/dialog.js"></script>
+
+    <script src="./dist/fullcalendar/moment.min.js"></script>
+    <script src="./dist/fullcalendar/fullcalendar.min.js"></script>
+    <script src="./dist/slick/slick.min.js"></script>
+    <!--<script src="./dist/leaflet/leaflet.js"></script>-->
+    <script src="./dist/photobox/jquery.photobox.js"></script>
+
+    <script src="./dist/mithril.js"></script>
+
+    <script src="./dist/dv-charts/dv-charts.js"></script>
+
+    <script src="./components/dv-components-util.js"></script>
+    <script src="./dist/parallax.min.js"></script>
+    <script src="./components/zb-table/bundle.js"></script>
+
+    <script src="./components/config.js"></script>
+
+    <script src="./dist/dv-auth-client.js"></script>
+
+    <script src="templates.js"></script>
+    <script src="general-scripts.js"></script>
+    <script src="web-composer.js"></script>
+
+    <script src="./components/dv-datasource/dv-datasource.js"></script>
+    <script src="./components/dv-simple.js"></script>
+    <script src="./components/dv-pagina/dv-pagina.js"></script>
+    <script src="./components/dv-mapa.js"></script>
+    <script src="./components/dv-form.js"></script>
+    <script src="./components/dv-menu.js"></script>
+    <script src="./components/dv-idiomas.js"></script>
+    <script src="./components/dv-graph.js"></script>
+    <script src="./components/zb-table/zb-table.js"></script>
+    <script src="./components/dv-calendar.js"></script>
+    <script src="./components/dv-agenda/dv-agenda.js"></script>
+    <script src="./components/dv-organigrama.js"></script>
+    <script src="./components/dv-carrousel.js"></script>
+    <script src="./components/dv-carrito.js"></script>
+    <script src="./components/dv-calculadora/index.js"></script>
+    <script src="./components/dv-encuesta/dv-encuesta.js"></script>
+    <script src="./components/dv-grupoencuestas/dv-grupoencuestas.js"></script>
+    <script src="./components/dv-directorio/dv-directorio.js"></script>
+    <script src="./components/dv-busqueda.js"></script>
+    <script src="./components/dv-graphLegend/dv-graphLegend.js"></script>
+    <script src="./components/dv-parallax.js"></script>
+    <script src="./components/dv-galeria/dv-galeria.js"></script>
+    <script src="./components/dv-kenBurns.js"></script>
+    <script src="./components/dv-accessibility/dv-accessibility.js"></script>
+    <script src="./components/dv-code.js"></script>
+    <script src="./components/dv-accordion.js"></script>
+    <script src="./components/dv-mapa-asociaciones/index.js"></script>
+
+    <!-- TENEMOS QUE CONVERTIR LOS SCRIPTS EN MODULOS PARA PODERLOS UTILIZAR DESDE EL NODE TAMBIÉN -->
+
+    <!-- DEPENDENCIAS DE LOS COMPONENTES M-->
+
+    <script>
+        // import "https://components.digitalvalue.es/dv-components-m/ckeditor-classic.js"
+    </script>
+
+    <script type="module">
+        import "https://components.digitalvalue.es/dv-components-m/agenda-calendario.min.js";
+        import "https://components.digitalvalue.es/dv-components-m/encuestas-enlazadas.min.js";
+        import "https://components.digitalvalue.es/dv-components-m/zity-photo-gallery.min.js"
+
+
+        //import { ZityPhotoGallery } from "./../../components/zity-photo-gallery.js"
+
+
+        // import { BuscadorSedeElectronica } from "./components-m/buscador-sede-electronica.js";
+        // window.BuscadorSedeElectronicaX = BuscadorSedeElectronica
+
+        // import {ZityPhotoGallery} from "https://public.digitalvalue.es/github/zity-components-m/src/components/zity-photo-gallery.js"
+        // // la declaramos global
+        // window.ZityPhotoGallery=ZityPhotoGallery
+
+        import { Agenda as AgendaM } from "./components-m/agenda.js";
+        window.Agenda = AgendaM
+
+        // import {VisorPresupuestario} from "https://public.digitalvalue.es/github/zity-components-m/src/components/visor-presupuestario.js"
+        // import {Calculadora} from "https://public.digitalvalue.es/github/zity-components-m/src/components/calculadora-presupuestaria.js"
+        // import {OrganigramaColumnas} from "https://public.digitalvalue.es/github/zity-components-m/src/components/organigrama.js"
+        // import {MapaFarmacias} from "https://public.digitalvalue.es/github/zity-components-m/src/components/mapa-centros-web.js"
+    </script>
+
+
+    <!--COMPONENTES ZITYBUILDER M-->
+    <script src="./components/dv-component-m.js"></script>
+    <script src="./components/dv-agenda-calendario.js"></script>
+    <script src="./components/dv-encuestas-enlazadas.js"></script>
+    <script src="./components/dv-zity-galeria.js"></script>
+    <!-- <script type="module" src="./components/dv-share-on-social-networks.js"></script> -->
+    <!---
+    <script src="./components/dv-visor-presupuestario.js"></script>
+    <script src="./components/dv-calculadora-presupuestaria.js"></script>
+    <script src="./components/dv-organigrama-columnas.js"></script>
+    <script src="./components/dv-informe-ita.js"></script>
+    <script src="./components/dv-mapa-farmacias.js"></script>
+        // organigrama
+        // Tablas
+    -->
+    <script src="./components/dv-zity.js"></script>
+    <!-- <script type="module" src="./components/dv-tables-group.js"></script> -->
+
+    <style>
+        :root{--w: "60px"}
+        [draggable].over {
+            outline: 3px dashed rgb(11, 222, 230)!important;
+        }
+        [draggable].is-dragging{
+            opacity: .4;
+        }
+        .ui.black.button,
+        .ui.black.buttons .button {
+            background-color: #363636;
+        }
+
+        dialog::backdrop {
+            background-color: rgba(255,255,255,.7);
+        }
+        #zity-message-block > div:first-child:not(:only-child) {opacity: .5;}
+        #leftSidenav {
+            height: 100%;
+            width: 250px;
+            position: absolute;
+            z-index: 10000;
+            top: 0;
+            left: -250px;
+            background-color: rgba(0, 0, 0, .8);
+            overflow: hidden;
+            padding: 1rem;
+            color: #fff;
+        }
+
+        .leftSideMenuItem {
+            cursor: pointer;
+        }
+
+        .userInfoPopup {
+            display: none;
+            width: 240px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            top: 60px;
+            z-index: 1;
+        }
+
+        .edition-top {
+            top: -160px !important;
+        }
+
+        #main * {
+            cursor: pointer;
+        }
+
+        /* #main .selected {
+            outline: 2px solid green!important;
+        } */
+
+        #main [data-editor='segment'].selected {
+            box-shadow: unset;
+            border-top-left-radius: 0!important;
+            border-top-right-radius: 0!important;
+        }
+        
+        #main [data-ref] > * {
+            opacity: .5;
+        }
+                
+
+        #main [data-editor='segment'].selected {
+            outline: 3px solid #ef8686!important;
+        }
+
+        #main > [data-editor='segment'].selected {
+            outline: 3px solid #bddfcc!important;
+        }
+
+        #main [data-editor='component'].selected {
+            border-radius: 3px!important;
+            outline: 3px solid #86b9ef!important;
+        }
+        #main [data-ref] {
+            outline: 3px dashed #c786ef!important;
+        }
+        #main [data-ref].selected {
+            outline-style: solid!important;
+            outline-color: #c786ef!important;
+        }
+
+        img.selected {
+            resize: both;
+        }
+
+        #main [data-editor='segment'] {
+            border: 1px solid #CACBCC;
+            border-radius: 5px;
+            min-height: 100px;
+            /* padding: 4px!important; */
+            /* margin: 2px; */
+            max-width: calc(100% - 4px);
+            max-height: calc(100% - 4px);
+        }
+
+        /*@@@@*/
+        
+        /* body::-webkit-scrollbar{
+           display: none;
+        } */
+        [data-type='grid'],
+        [data-editor='segment'].grid,
+        [data-type='cards'],
+        [data-editor='segment'].cards {
+            margin-top: 0!important;
+            margin-bottom: 0!important;
+        }
+
+        .CodeMirror-lint-tooltip {
+            z-index: 100001;
+        }
+
+        .userInfoPopup { right: 0; }
+
+        body.dimmable .ui.fullscreen.modal {
+            width: 90%!important;
+            left: 100px!important;
+        }
+
+        #editPageModal .content .form { max-height: 70vh!important; overflow-y: scroll;}
+        #pageInfo { box-shadow: 0px 1px 9px 0 rgb(0 0 0 / 30%);}
+
+        #web { border-radius: 4px 0 0 0;}
+        input#pageName { border-radius: 0 4px 0 0;}
+
+        body ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 10px;
+            height: 10px
+        }
+        body ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: rgb(52 52 52);
+            cursor: pointer;
+        }
+
+        #CMeditor ::-webkit-scrollbar{
+            -webkit-appearance: none;
+            width: 10px;
+        }
+        body ::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 0;
+        }
+
+        #CMeditor ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            background: rgb(177 177 177);
+        }
+
+        #CMeditor .cm-s-monokai span.cm-property,
+        #CMeditor .cm-s-monokai span.cm-attribute { color: #a6e22e; }
+        #CMeditor .cm-s-monokai .CodeMirror-linenumber { color: #8b8b8b;}
+
+        body.dimmable .hidden{display: none!important;}
+        body.dimmable .selected .selected\:visible{display: block !important;}
+
+        @media (max-width: 1400px){
+            #edition .ui.simple.item.dropdown span.title,
+            #edition span.title {
+                display: none;
+            }
+        }
+        @media (max-width: 991px){
+            #edition .zoom {
+                display: none;
+            }
+        }
+
+        .component-controller {
+            display: none;
+        }
+        .selected .component-controller {
+            display: block;
+        }
+        #slider-zity::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            height: 26px;
+            background: #ffffff;
+            cursor: pointer;
+            margin-bottom: -2px;
+            box-shadow: 0 0 1px 1px #ddd;
+            border-radius: 3px;
+            margin-left: -1px;
+        }
+
+
+
+        /* NEW STYLING */
+        .theme-light body, html.theme-light {
+            background-image: linear-gradient(to right bottom, #f0f0f0, #edecf0, #ebe7ef, #ebe2ed, #ebddea);
+        }
+        .theme-dark body, html.theme-dark{
+            background-image: linear-gradient(to right bottom, #121c2f, #011a24, #001617, #010f09, #020400);
+        }
+        .theme-light body, html.theme-light, .theme-dark body, html.theme-dark {
+            height: auto!important;
+        }
+        .theme-dark {
+            --text: #fff;
+            --opacity: 90%;
+            --bgColor: rgb(15 23 42 / 100%);
+            --bgColor-secondary: rgb(15 23 42 / 90%);
+            --if-background: #f2e58f;
+            --if-text-color: #343434;
+            --if-shadow-color:#d9d8bb;
+        }
+        .theme-light{
+            --text: rgba(0,0,0,.87);
+            --bgColor: #fafafa;
+            --bgColor-secondary: rgb(240 240 240 / 100%);
+            --if-background: #f2e58f;
+            --if-text-color: #343434;
+            --if-shadow-color:#d9d8bb;
+        }
+
+        .theme-dark .main-wrapper {
+            position: relative;
+            background-image: url(./images/dark-bg.svg);
+        }
+
+        .theme-dark .main-wrapper:before {
+            content:"";
+            position: absolute;
+            height: 37.5rem;
+            left: 0;
+            width: 100%;
+            top: 0;
+            z-index: 2;
+            -webkit-mask-image: linear-gradient(
+                0deg,transparent,#000);
+            mask-image: linear-gradient(0deg,transparent,#000);
+            background-position: center top -1px;
+            background-image: linear-gradient(to bottom, #0c1120, transparent);
+        }
+        .theme-light .main-wrapper { background-image: url(./images/light-bg.svg);}
+        .theme-light .side-bar-menu > .ui.menu .icon{  color: #2e2d2d; }
+        .theme-dark .side-bar-menu > .ui.menu .icon {  color: #cacaca; }
+
+        .main-wrapper {
+            min-height: 102vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 1em 80px 22%;
+        }
+
+        #edition{
+            --opacity: 100%;
+            padding:0;
+            z-index: 998;
+            box-shadow: 0 0 5px 0 rgb(0 0 0 / 30%);
+            background-color: var(--bgColor-secondary);
+        }
+
+        #edition > div > .ui.menu {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        #edition .top-bar-menu {
+            --opacity: 100%;
+            background-color: var(--bgColor);
+        }
+        #edition > div > .ui.menu > .item,
+        #edition .header-links,
+        #edition .ui.vertical.visible.sidebar.menu.right .item{
+            color: var(--text)
+        }
+        #edition .top-bar-menu {
+            box-shadow: inset 0 0 0 0px #fff, inset 0 0 0 calc(1px + 0px) hsla(0,0%, 100%, .1), 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0, .1)
+        }
+        #edition .side-bar-menu{
+            box-shadow: inset 0 0 0 0px #fff, inset 0 0 0 calc(1px + 0px) hsla(0,0%, 100%, .1), 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0, .1)
+        }
+        #edition .side-bar-menu,
+        #edition .ui.vertical.visible.sidebar.menu.right {
+            background-color: var(--bgColor);
+        }
+        #edition .side-bar-menu .ui.menu .item:before {
+            content: unset;
+        }
+
+        #edition .ui.vertical.visible.sidebar.menu.right {
+            box-shadow: -1px 6px 5px 0 rgb(0 0 0 / 30%);
+            top: 40px;
+            max-height: calc(100vh - 40px);
+        }
+
+        #web-title{
+            color: var(--text);
+            margin-top: 110px;
+            margin-bottom: 36px;
+            width: 100%;
+            max-width: 1450px;
+            font-family: monospace;
+            z-index: 10;
+        }
+        #web-title h2{
+            margin: 0;
+            font-size: 61px;
+            line-height: 58px;
+            font-family: monospace;
+            text-indent: -4px;
+            text-transform: capitalize;
+        }
+        #main{
+            position: relative;
+            z-index: 100;
+            background-color: #fff;
+            flex: auto;
+            width: 100%;
+            max-width: 1450px;
+            min-height: 100%;
+            padding: 5px;
+            box-shadow: inset 0 0 0 0px #fff, inset 0 0 0 calc(1px + 0px) hsla(0,0%, 100%, .1), 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0, .1)
+        }
+
+        body > .main-wrapper > #main > * div[data-editor='segment'][data-if],
+        body > .main-wrapper > #main > * div[data-editor='segment'][data-for] {
+            padding-top: 16px!important;
+            padding-bottom: 16px!important;
+            padding-left: 16px!important;
+            padding-right: 16px!important;
+            border-top: 34px solid var(--if-background)!important;
+            position: relative;
+            outline: 4px solid var(--if-background)!important;
+            box-shadow: inset 0 0 1px 1px var(--if-shadow-color), 0 0 0px 5px var(--if-shadow-color)!important;
+            max-width: 98%!important;
+            margin: 14px auto 14px;
+            border-left: 0!important;
+            border-right: 0!important;
+            border-radius: 1px!important;
+        }
+
+        body .main-wrapper #main [data-editor='segment'][data-if].selected,
+        body .main-wrapper #main [data-editor='segment'][data-for].selected{
+            /* box-shadow: inset 0 0 1px 0 #000, 0 0 5px 5px green!important; */
+            outline: 4px solid #ef8686!important;
+        }
+
+        body .main-wrapper #main > [data-editor='segment'][data-if].selected,
+        body .main-wrapper #main > [data-editor='segment'][data-for].selected {
+            outline: 4px solid #bddfcc!important
+        }
+
+        body .main-wrapper #main [data-editor='segment'][data-if] > .dv-controlador-if,
+        body .main-wrapper #main [data-editor='segment'][data-for] >.dv-bucle-for {
+            height: 32px!important;
+            width: 32px!important;
+            z-index: 2!important;
+            color: var(--if-text-color)!important;
+            top: 0!important;
+            position: absolute!important;
+            transform: translateY(-34px)!important;
+            font-style: italic!important;
+            display: flex!important;
+            align-items: center!important;
+            justify-content: center!important;
+            font-family: monospace!important;
+            margin: 0!important;
+            opacity: 1!important;
+        }
+        .dv-bucle-for{
+            left: 0!important;
+        }
+        .dv-controlador-if{
+            right: 0!important;
+        }
+
+        body .main-wrapper #main [data-editor='segment'][data-if] > .dv-controlador-if:hover,
+        body .main-wrapper #main [data-editor='segment'][data-for] >.dv-bucle-for:hover {
+            background-color: #ffffff41!important;
+            color: #000!important;
+        }
+
+        body [data-message]:before {
+            bottom: 30px;
+            position: absolute;
+            z-index: 3500;
+            color: #000;
+            background: #fff;
+            padding: .5rem;
+            transform: translate(-1.1rem, 0);
+            border: 1px solid rgb(167, 167, 167);
+            border-radius: 3px;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        body span.right[data-message]:before {
+            transform: translate(-80%, 0);
+        }
+        body span.active[data-message]:before{
+            content: attr(data-message);
+        }
+
+        div[data-ref] {
+            position: relative;
+        }
+        div[data-ref] *{
+            pointer-events: none;
+        }
+
+
+        /*Componentes*/
+        body .main-wrapper #main > * div[data-editor="component"] {
+            margin: 5px;
+            width: -webkit-fill-available;
+            flex-grow: 1;
+        }
+        body .main-wrapper #main > * div[data-editor='component'] .existing.segment.ui {
+            padding: 1rem !important;
+            background: #fff!important;
+            flex-grow: 1;
+        }
+        body .main-wrapper #main > * div[data-editor='component'] .existing.segment.ui .preview,
+        body .main-wrapper #main > * div[data-editor='component'] .existing.segment.ui .preview * {
+            color: #000!important;
+        }
+
+        body .main-wrapper #main > * div[data-component="dv-component-m"] > .ui.existing.segment{
+            min-height: 100px;
+            border: 3px solid #1e293b;
+            padding: 28px 16px 16px 16px;
+            outline: none;
+            background: #1e293b!important;
+            color: #607d8b;
+            max-width: 98%!important;
+            margin: 3px auto 3px;
+        }
+
+        /* header del component*/
+        body .main-wrapper #main > * div[data-component="dv-component-m"] > .ui.existing.segment > .label{
+            top: -2px;
+            left: -2px;
+            background: #1e293b;
+            width: calc(100% + 4px);
+            padding: 0px 1rem 0px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height:40px;
+            border-bottom: 1px solid rgb(62 116 142);
+        }
+        body .main-wrapper #main > * div[data-component="dv-component-m"] > .ui.existing.segment > .label div{
+            font-size: 13px;
+            padding: 1em;
+            color: rgb(125 211 252);
+            font-family: monospace;
+        }
+        body .main-wrapper #main > * div[data-component="dv-component-m"] > .ui.existing.segment > pre {
+            max-width: 100%;
+            white-space: break-spaces;
+        }
+        body .main-wrapper #main > * div[data-editor="component"] > .ui.existing.segment > .label ~ div{
+            margin-top: 3rem!important;
+        }
+
+        /* PLACEHOLDERS */
+        .zt-placeholder .line {
+            height: 11px;
+            width: 65%;
+            background: #ddd;
+            margin-top: .5em;
+        }
+
+        .zt-placeholder .line + .line {  width: 40%;  }
+        .zt-placeholder .line + .line + .line {  width: 20%; }
+
+        #segment-tooltip{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            z-index: 900;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            font-family: monospace;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 9px 1px rgb(0 0 0 / 30%);
+        }
+        #panel-control {
+            position:fixed;
+            left:0;
+            top:41px;
+            z-index: 998;
+            display:inline-flex;
+            width: 22%;
+            height: calc(100vh - 40px);
+        }
+
+        #loader { 
+            background-color: var(--bgColor);
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #loader .text {
+            position: static;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+        .text > span:first-child {
+            font-size: 5rem;
+            font-weight: bolder;
+            text-shadow: 3px 3px #3a6991;
+        }
+
+        .theme-light #loader  .text > span:first-child {
+            color: #5799d3;
+        }
+        .theme-dark #loader  .text > span:first-child {
+            color: #2f2f2f;
+        }
+        
+        .text > span:last-child {
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: 2px;
+            color: #4e779b;
+        }
+
+        #loader .spinner-box {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            position: absolute;
+        }
+
+        #loader .circle-border {
+            width: 150px;
+            height: 150px;
+            padding: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            
+            animation: spin .8s linear 0s infinite;
+        }
+
+        .theme-light #loader  .circle-border {
+            background: rgb(63,249,220);
+            background: linear-gradient(0deg, rgb(63 243 249 / 23%) 33%, rgb(200 66 211 / 35%) 100% );
+        }
+
+        .theme-dark #loader .circle-border {
+            background: rgb(63,249,220);
+            background: linear-gradient(0deg, rgba(63,249,220,0.1) 33%, rgb(200 66 211 / 35%) 100%);
+        }
+        #loader .circle-core {
+            width: 100%;
+            height: 100%;
+            background-color: var(--bgColor);
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(359deg);
+            }
+        }
+
+        #selected-menu-segment {
+            background-color: #fff;
+        }
+
+</style>
+
+<!----
+COMPONENTES M
+-->
+<!-- <script src="/components-m/menu-collapsible.js"></script>
+<script src="/components-m/translate.min.js"></script> -->
+
+</head>
+
+<body>
+
+    <!-- // Pasar todo esto a mithril -->
+
+<template id="editionpane">
+    <style>
+        #zity-message {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3000;
+            margin: 0;
+        }
+
+        #zity-message.msg-positive .ui.header .content{
+            color:green!important;
+        }
+        #zity-message.msg-positive{
+            border: 1px solid green;
+            background: #d0ffc2;
+        }
+
+        #zity-message.msg-info .ui.header .content{
+            color: #800000!important;
+        }
+
+        #zity-message.msg-error{
+            border: 1px solid #800000;
+            background: #ffc2c2;
+        }
+
+        #zity-message.msg-info .ui.header .content {
+            color: rgb(226, 211, 0)!important;
+        }
+        #zity-message.msg-info {
+            border: 1px solid #eeff00;
+            background: #333333;
+        }
+
+        /* #zity-message > * {color: #fff} */
+        #zity-message.msg-positive .icon{ color: rgb(107, 202, 43); }
+        #zity-message.msg-info .icon{ color: rgb(226, 211, 0); }
+        /* body.dimmable .ui.menu .item{color: #fff;} */
+    </style>
+
+
+
+<!-- <div class="ui right visible overlay sidebar" id="csseditor" style='z-index:10000; display: none; background-color: #000;'>
+<div class='ui inverted icon button' onclick="$('#csseditor').hide();">Editor de CSS
+    <i class="dropdown icon"></i>
+</div>
+
+<div class="ui dropdown inverted icon button">
+    <i class="bars icon"></i>
+    <div class="text">Menu</div>
+    <div class="left menu">
+        <div class="item" onclick="saveCssEditorData();">
+            Guardar
+        </div>
+        <div class="item" onclick="newAttributeCssEditor();">
+            Añadir atributo
+        </div>
+        <div class="item" id="revertirCSS">
+            Revertir
+        </div>
+    </div>
+</div> -->
+
+<!-- <form class="ui inverted form" id="cssEditor" style="padding: 1rem;"></form> -->
+<!-- </div> -->
+
+</template>
+
+<div class="ui active inverted dimmer" id='loader'>
+    <div class="spinner-box">
+        <div class="circle-border">
+          <div class="circle-core"></div>
+        </div>  
+    </div>
+    <div class="text">
+        <span>ZT</span>
+        <span>Builder</span>
+    </div>
+</div>
+<!-- Mensajes de manejo de pagina -->
+<div class="ui message" id="zity-message" style="display: none;"></div>
+
+<!--
+    Mensajes que aparescan cuando se guarda un fichero
+ -->
+<div id="zity-message-block"></div>
+
+<div id='loginBox' class='ui modal loginBox'></div>
+
+<div id="panel-control" >
+    <div id="edition"></div>
+    <div id="selected-menu" style="display:none; z-index: 999"></div>
+    <div id="selected-menu-segment" style="display:none;"></div>
+</div>
+
+
+<!-- <div id="modal-mithril"></div> -->
+<!-- 
+<div id="nuevoComponente"></div> -->
+
+<div id="save-modal"></div>
+<div id="init-page"></div>
+<div class="main-wrapper" id="zity-wrapper">
+    <div id="web-title"></div>
+    <div id="main"></div>
+</div>
+
+<div id="log"></div>
+
+<!-- Se usa para pintar AssetsManager -->
+<div id="dialog"></div>
+
+<!-- if/for contenido -->
+<dialog id="segment-tooltip"></dialog>
+</body>
+
+<script defer type="module" src="index.js"></script>
+
+<script>
+/**
+ *
+ * VARIABLES GLOBALES
+ *
+ */
+var selectedItem;
+var webComponentsRegistered = new Array;
+// Contiene el JSON
+let USERDATA = {};
+const HOST = location.host;
+var mainPage = document; // el dom de la página
+var pageData = {}; //donde se almacena el json de la page
+var pageData0; // para saber si la pagina ha cambiado.
+var pages=[]
+
+var isOpenAssetsManager = false;
+var AssetsManager;
+
+</script>
+
+<script type="module">
+    import { OpenAssetsManager } from "../../components/documentos.js";
+    AssetsManager = OpenAssetsManager
+</script>
+
+</html>
